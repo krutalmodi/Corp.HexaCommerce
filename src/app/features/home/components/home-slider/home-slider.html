@@ -1,0 +1,49 @@
+<div class="carousel-container">
+  <div class="carousel-wrapper">
+    <div class="carousel-slides">
+      @for (slide of slides; track slide.id; let i = $index) {
+        <div
+          class="carousel-slide"
+          [class.active]="i === currentSlide()"
+          [style.backgroundImage]="'url(' + slide.image + ')'"
+        >
+          <div class="slide-overlay">
+            <div class="slide-content">
+              <h2>{{ slide.title }}</h2>
+              <p>{{ slide.description }}</p>
+              <button class="cta-button">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button
+      class="carousel-nav prev-btn"
+      (click)="prevSlide()"
+      aria-label="Previous slide"
+    >
+      &#10094;
+    </button>
+    <button
+      class="carousel-nav next-btn"
+      (click)="nextSlide()"
+      aria-label="Next slide"
+    >
+      &#10095;
+    </button>
+  </div>
+
+  <!-- Dots Navigation -->
+  <div class="carousel-dots">
+    @for (slide of slides; track slide.id; let i = $index) {
+      <button
+        class="dot"
+        [class.active]="i === currentSlide()"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+      ></button>
+    }
+  </div>
+</div>

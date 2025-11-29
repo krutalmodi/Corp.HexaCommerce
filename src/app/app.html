@@ -1,78 +1,10 @@
 <main class="site-main">
-  <header class="site-header">
-    <div class="header-inner">
-      <h1 class="logo">{{ title() }}</h1>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#products" class="nav-link">Products</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <input class="search" type="search" placeholder="Search products" aria-label="Search products" />
-        <button class="cart" aria-label="Cart">Cart (0)</button>
-      </div>
-    </div>
-  </header>
+  <app-header></app-header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <h2>Shop the best products for your business</h2>
-        <p>Fast shipping • Secure payments • 30-day returns</p>
-        <a href="#products" class="btn-primary">Browse Products</a>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="product-mock">Featured</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features" aria-label="Site features">
-    <div class="feature">Free shipping over $50</div>
-    <div class="feature">Secure payments</div>
-    <div class="feature">24/7 support</div>
-  </section>
-
-  <section id="products" class="products">
-    <h3>Featured products</h3>
-    <div class="product-grid">
-      <article class="product-card">
-        <div class="thumb">Product A</div>
-        <div class="meta">
-          <div class="name">Classic Sneakers</div>
-          <div class="price">$79.00</div>
-        </div>
-        <button class="add">Add to cart</button>
-      </article>
-      <article class="product-card">
-        <div class="thumb">Product B</div>
-        <div class="meta">
-          <div class="name">Leather Bag</div>
-          <div class="price">$129.00</div>
-        </div>
-        <button class="add">Add to cart</button>
-      </article>
-      <article class="product-card">
-        <div class="thumb">Product C</div>
-        <div class="meta">
-          <div class="name">Wireless Headphones</div>
-          <div class="price">$199.00</div>
-        </div>
-        <button class="add">Add to cart</button>
-      </article>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <!-- <small>&copy; {{ new Date().getFullYear() }} {{ title() }}. All rights reserved.</small> -->
-      <nav class="footer-nav">
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-      </nav>
-    </div>
-  </footer>
+  <app-body></app-body>
+  
+  <app-footer></app-footer>
+  
 </main>
 
 <router-outlet />
