@@ -4,11 +4,9 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a routerLink="" class="nav-link">HOME </a>
         <a routerLink="about" class="nav-link">ABOUT</a>
-        <a *ngFor="let category of categories" 
-           [routerLink]="['/category', category.id]" 
-           class="nav-link">
-           {{ category.name| uppercase }}
-        </a>
+        @for (category of categories; track $index) {
+          <a [routerLink]="['/category', category.id]" class="nav-link">{{ category.name | uppercase }}</a>
+        }
         <a routerLink="contact" class="nav-link">CONTACT</a>
       </nav>
       <div class="header-actions">

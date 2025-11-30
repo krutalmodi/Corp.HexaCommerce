@@ -5,41 +5,99 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
   
+  getProductsByCategoryId(categoryId: number) {
+    return this.getProducts().filter(product => product.categoryId === categoryId);
+  }
+
   getProducts() {
     return [
-      {
-        id: 1,
-        name: 'Product 1',
-        description: 'Description for Product 1',
-        price: 29.99,
-        imageUrl: 'assets/products/product1.jpg',
-        categoryId: 1,
-        productRating: 4.5,
-        showAddToCartButton: true,
-        isEnabled: true
-      },
-      {
-        id: 2,
-        name: 'Product 2',
-        description: 'Description for Product 2',
-        price: 49.99,
-        imageUrl: 'assets/products/product2.jpg',
-        categoryId: 2,
-        productRating: 4.0,
-        showAddToCartButton: true,
-        isEnabled: true
-      },
-      {
-        id: 3,
-        name: 'Product 3',
-        description: 'Description for Product 3',
-        price: 19.99,
-        imageUrl: 'assets/products/product3.jpg',
-        categoryId: 1,
-        productRating: 3.5,
-        showAddToCartButton: true,
-        isEnabled: true
-      }
+      // Women's Category (categoryId: 1)
+      { id: 1, name: 'Classic White T-Shirt', description: 'Comfortable and versatile white cotton t-shirt', price: 29.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 2, name: 'Denim Jacket', description: 'Stylish blue denim jacket perfect for any season', price: 79.99, imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.7, showAddToCartButton: true, isEnabled: true },
+      { id: 3, name: 'Black Skinny Jeans', description: 'Modern black skinny fit jeans', price: 59.99, imageUrl: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 4, name: 'Floral Summer Dress', description: 'Light and breathable floral print dress', price: 49.99, imageUrl: 'https://images.unsplash.com/photo-1595777707802-c2baa3c176d4?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 5, name: 'Leather Handbag', description: 'Premium leather brown handbag', price: 129.99, imageUrl: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.8, showAddToCartButton: true, isEnabled: true },
+      { id: 6, name: 'Sports Bra', description: 'High-performance sports bra for active wear', price: 45.99, imageUrl: 'https://images.unsplash.com/photo-1506629082632-11c83c1c84d4?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 7, name: 'Wool Sweater', description: 'Cozy wool blend sweater perfect for winters', price: 69.99, imageUrl: 'https://images.unsplash.com/photo-1556821552-5c5d440c6e0c?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 8, name: 'Silk Blouse', description: 'Elegant silk blouse in cream color', price: 89.99, imageUrl: 'https://images.unsplash.com/photo-1554389793-d55a38ad3e37?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 9, name: 'Yoga Pants', description: 'Comfortable and stretchy yoga pants', price: 59.99, imageUrl: 'https://images.unsplash.com/photo-1506629082632-11c83c1c84d4?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.7, showAddToCartButton: true, isEnabled: true },
+      { id: 10, name: 'Evening Gown', description: 'Stunning black evening gown', price: 199.99, imageUrl: 'https://images.unsplash.com/photo-1566028669876-a6b12dfb4b8e?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.9, showAddToCartButton: true, isEnabled: true },
+      { id: 11, name: 'Casual Blazer', description: 'Professional navy blazer', price: 99.99, imageUrl: 'https://images.unsplash.com/photo-1591047990052-85d1ac61581e?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 12, name: 'Linen Shorts', description: 'Breathable linen shorts for summer', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1582275335684-82986e6ff055?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 13, name: 'Cardigan', description: 'Soft knit cardigan in multiple colors', price: 74.99, imageUrl: 'https://images.unsplash.com/photo-1551552845-ff2f25ea73f5?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 14, name: 'Pencil Skirt', description: 'Classic black pencil skirt', price: 54.99, imageUrl: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.2, showAddToCartButton: true, isEnabled: true },
+      { id: 15, name: 'Hoodie', description: 'Cozy cotton hoodie', price: 44.99, imageUrl: 'https://images.unsplash.com/photo-1556821552-5c5d440c6e0c?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 16, name: 'Trench Coat', description: 'Timeless beige trench coat', price: 149.99, imageUrl: 'https://images.unsplash.com/photo-1539533057440-7814a9e0c33e?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.7, showAddToCartButton: true, isEnabled: true },
+      { id: 17, name: 'Tank Top', description: 'Simple and basic tank top', price: 19.99, imageUrl: 'https://images.unsplash.com/photo-1572331479212-ba5c4e5a9b42?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.1, showAddToCartButton: true, isEnabled: true },
+      { id: 18, name: 'Jumpsuit', description: 'Elegant one-piece jumpsuit', price: 119.99, imageUrl: 'https://images.unsplash.com/photo-1537958636508-b8b67bead613?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 19, name: 'Wrap Dress', description: 'Flattering wrap dress in floral print', price: 64.99, imageUrl: 'https://images.unsplash.com/photo-1607622814075-e51df1bdc82f?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 20, name: 'Lace Top', description: 'Delicate lace top perfect for special occasions', price: 59.99, imageUrl: 'https://images.unsplash.com/photo-1494553895706-20f0a50ae802?w=400&h=400&fit=crop', categoryId: 1, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+
+      // Kids' Category (categoryId: 2)
+      { id: 21, name: 'Cartoon T-Shirt', description: 'Colorful cartoon character t-shirt', price: 19.99, imageUrl: 'https://images.unsplash.com/photo-1519238263413-b37e26baf269?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 22, name: 'Kids Denim Jeans', description: 'Comfortable and durable denim for kids', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 23, name: 'Superhero Hoodie', description: 'Fun superhero themed hoodie', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1556821552-5c5d440c6e0c?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.7, showAddToCartButton: true, isEnabled: true },
+      { id: 24, name: 'Princess Dress', description: 'Sparkly princess dress for girls', price: 49.99, imageUrl: 'https://images.unsplash.com/photo-1595777707802-c2baa3c176d4?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.8, showAddToCartButton: true, isEnabled: true },
+      { id: 25, name: 'Kids Sneakers', description: 'Comfortable and colorful kids sneakers', price: 44.99, imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 26, name: 'Dinosaur Sweater', description: 'Cool dinosaur print sweater', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1506629082632-11c83c1c84d4?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 27, name: 'Striped Polo', description: 'Classic striped polo shirt for kids', price: 29.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.2, showAddToCartButton: true, isEnabled: true },
+      { id: 28, name: 'Cargo Pants', description: 'Practical cargo pants with pockets', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1473714164016-f6fce9f41e3b?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 29, name: 'Graphic Tank', description: 'Fun graphic tank top for summer', price: 17.99, imageUrl: 'https://images.unsplash.com/photo-1572331479212-ba5c4e5a9b42?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.1, showAddToCartButton: true, isEnabled: true },
+      { id: 30, name: 'Denim Shorts', description: 'Cool denim shorts for kids', price: 29.99, imageUrl: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 31, name: 'Sports Jersey', description: 'Lightweight sports jersey for active kids', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 32, name: 'Windbreaker', description: 'Lightweight windbreaker jacket', price: 44.99, imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 33, name: 'Pajama Set', description: 'Soft and cozy pajama set', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1522715386591-8d52b2f9c0c2?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 34, name: 'Baseball Cap', description: 'Adjustable baseball cap for kids', price: 19.99, imageUrl: 'https://images.unsplash.com/photo-1533418128750-cc95a66fa0ba?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.2, showAddToCartButton: true, isEnabled: true },
+      { id: 35, name: 'Swim Trunks', description: 'Quick-dry swim trunks for boys', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1568602470122-7832951cc4c5?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 36, name: 'Floral Romper', description: 'Cute floral romper for girls', price: 44.99, imageUrl: 'https://images.unsplash.com/photo-1595777707802-c2baa3c176d4?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 37, name: 'Oxford Shirt', description: 'Formal oxford shirt for kids', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.1, showAddToCartButton: true, isEnabled: true },
+      { id: 38, name: 'Leggings', description: 'Comfortable stretchy leggings for girls', price: 24.99, imageUrl: 'https://images.unsplash.com/photo-1506629082632-11c83c1c84d4?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 39, name: 'Flannel Shirt', description: 'Classic flannel shirt for outdoors', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 40, name: 'Thermal Leggings', description: 'Warm thermal leggings for winter', price: 29.99, imageUrl: 'https://images.unsplash.com/photo-1506629082632-11c83c1c84d4?w=400&h=400&fit=crop', categoryId: 2, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+
+      // Men's Category (categoryId: 3)
+      { id: 41, name: 'Classic White Shirt', description: 'Essential white cotton dress shirt', price: 44.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 42, name: 'Blue Denim Jeans', description: 'Comfortable straight fit blue jeans', price: 64.99, imageUrl: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 43, name: 'Leather Jacket', description: 'Premium black leather jacket', price: 149.99, imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.8, showAddToCartButton: true, isEnabled: true },
+      { id: 44, name: 'Polo Shirt', description: 'Classic polo shirt in various colors', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 45, name: 'Wool Sweater', description: 'Warm wool blend sweater', price: 84.99, imageUrl: 'https://images.unsplash.com/photo-1556821552-5c5d440c6e0c?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 46, name: 'Chino Pants', description: 'Casual chino pants in khaki', price: 59.99, imageUrl: 'https://images.unsplash.com/photo-1473714164016-f6fce9f41e3b?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 47, name: 'Sports Jacket', description: 'Comfortable sports jacket for casual wear', price: 109.99, imageUrl: 'https://images.unsplash.com/photo-1591047990052-85d1ac61581e?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 48, name: 'Henley Shirt', description: 'Stylish henley shirt with buttons', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.2, showAddToCartButton: true, isEnabled: true },
+      { id: 49, name: 'Athletic Shorts', description: 'Lightweight athletic shorts', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1582275335684-82986e6ff055?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 50, name: 'Formal Suit', description: 'Complete formal suit jacket and pants', price: 249.99, imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.9, showAddToCartButton: true, isEnabled: true },
+      { id: 51, name: 'Hoodie', description: 'Comfortable casual hoodie', price: 49.99, imageUrl: 'https://images.unsplash.com/photo-1556821552-5c5d440c6e0c?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 52, name: 'Graphic T-Shirt', description: 'Cool graphic print t-shirt', price: 29.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 53, name: 'Cardigan', description: 'Classic knit cardigan', price: 74.99, imageUrl: 'https://images.unsplash.com/photo-1551552845-ff2f25ea73f5?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 54, name: 'Trench Coat', description: 'Professional trench coat', price: 139.99, imageUrl: 'https://images.unsplash.com/photo-1539533057440-7814a9e0c33e?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.7, showAddToCartButton: true, isEnabled: true },
+      { id: 55, name: 'Cargo Shorts', description: 'Practical cargo shorts with multiple pockets', price: 49.99, imageUrl: 'https://images.unsplash.com/photo-1582275335684-82986e6ff055?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.2, showAddToCartButton: true, isEnabled: true },
+      { id: 56, name: 'Tank Top', description: 'Basic sleeveless tank top', price: 19.99, imageUrl: 'https://images.unsplash.com/photo-1572331479212-ba5c4e5a9b42?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.1, showAddToCartButton: true, isEnabled: true },
+      { id: 57, name: 'Windbreaker', description: 'Lightweight wind-resistant jacket', price: 59.99, imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 58, name: 'Oxford Shoes', description: 'Classic leather oxford shoes', price: 129.99, imageUrl: 'https://images.unsplash.com/photo-1548161692-23792e1a5b4c?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 59, name: 'V-Neck Sweater', description: 'Soft v-neck sweater', price: 69.99, imageUrl: 'https://images.unsplash.com/photo-1556821552-5c5d440c6e0c?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 60, name: 'Baseball Cap', description: 'Classic baseball cap for men', price: 24.99, imageUrl: 'https://images.unsplash.com/photo-1533418128750-cc95a66fa0ba?w=400&h=400&fit=crop', categoryId: 3, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+
+      // Accessories Category (categoryId: 4)
+      { id: 61, name: 'Leather Wallet', description: 'Premium leather bifold wallet', price: 49.99, imageUrl: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 62, name: 'Silk Tie', description: 'Classic silk necktie in various patterns', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1564253376087-07ec4ad46b9d?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 63, name: 'Sunglasses', description: 'UV-protected fashionable sunglasses', price: 79.99, imageUrl: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.7, showAddToCartButton: true, isEnabled: true },
+      { id: 64, name: 'Backpack', description: 'Durable and spacious backpack', price: 89.99, imageUrl: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 65, name: 'Wrist Watch', description: 'Elegant analog wrist watch', price: 129.99, imageUrl: 'https://images.unsplash.com/photo-1523170335684-f042070fe1c7?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.8, showAddToCartButton: true, isEnabled: true },
+      { id: 66, name: 'Scarf', description: 'Soft wool and silk blend scarf', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1591379245676-15d3ce0f4ffd?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 67, name: 'Beanie', description: 'Cozy knit beanie for winter', price: 24.99, imageUrl: 'https://images.unsplash.com/photo-1517338903921-7d1e9f22a96d?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 68, name: 'Leather Belt', description: 'Classic leather belt with metal buckle', price: 44.99, imageUrl: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 69, name: 'Crossbody Bag', description: 'Practical crossbody shoulder bag', price: 74.99, imageUrl: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 70, name: 'Hair Clips', description: 'Elegant hair clips and accessories', price: 14.99, imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.2, showAddToCartButton: true, isEnabled: true },
+      { id: 71, name: 'Gloves', description: 'Warm leather gloves for winter', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1591379245676-15d3ce0f4ffd?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 72, name: 'Umbrella', description: 'Compact and durable umbrella', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 73, name: 'Keychain', description: 'Stylish leather keychain', price: 14.99, imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.1, showAddToCartButton: true, isEnabled: true },
+      { id: 74, name: 'Necklace', description: 'Elegant stainless steel necklace', price: 49.99, imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 75, name: 'Earrings', description: 'Stylish diamond-like earrings', price: 59.99, imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.6, showAddToCartButton: true, isEnabled: true },
+      { id: 76, name: 'Ring', description: 'Beautiful stainless steel ring', price: 39.99, imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.4, showAddToCartButton: true, isEnabled: true },
+      { id: 77, name: 'Bracelet', description: 'Casual and stylish bracelet', price: 34.99, imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.3, showAddToCartButton: true, isEnabled: true },
+      { id: 78, name: 'Phone Case', description: 'Protective phone case with design', price: 19.99, imageUrl: 'https://images.unsplash.com/photo-1607936591512-cdc4dfe7e43c?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.5, showAddToCartButton: true, isEnabled: true },
+      { id: 79, name: 'Shoulder Bag', description: 'Professional shoulder bag for work', price: 99.99, imageUrl: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.7, showAddToCartButton: true, isEnabled: true },
+      { id: 80, name: 'Glasses Case', description: 'Protective case for eyeglasses', price: 14.99, imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop', categoryId: 4, productRating: 4.2, showAddToCartButton: true, isEnabled: true }
     ];
   }
 }

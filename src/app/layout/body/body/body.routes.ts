@@ -12,8 +12,8 @@ export const bodyRoutes: Routes = [
         title: 'About Us'
     },
     {
-        path: 'category/:name',
-        loadComponent: () => import('../../../features/category/category/category').then(m => m.Category ),
+        path: 'category/:id',
+        loadComponent: () => import('../../../features/category/category/category').then(m => m.CategoryComponent ),
         title: 'Category'
     },
     {

@@ -1,16 +1,18 @@
-<div class="product-box">
+<div class="product-card">
   <div class="product-image">
-    <img [src]="Product?.imageUrl" [alt]="Product?.name" />
+    <img [src]="product?.imageUrl" [alt]="product?.name" />
   </div>
   <div class="product-details">
-    <h3 class="product-name">{{ Product?.name }}</h3> 
-    <p class="product-description">{{ Product?.description }}</p>
+    <h3 class="product-name">{{ product?.name }}</h3> 
+    <p class="product-description">{{ product?.description }}</p>
     <div class="product-price-rating">
-      <span class="product-price">\${{ Product?.price?.toFixed(2) ?? '0.00' }}</span>
-      <span class="product-rating">Rating: {{ Product?.productRating }} / 5</span>
+      <span class="product-price">${{ product?.price?.toFixed(2) ?? '0.00' }}</span>
+      <span class="product-rating">Rating: {{ product?.productRating }} / 5</span>
     </div>
-    <button *ngIf="Product?.showAddToCartButton" class="add-to-cart-btn">
-      Add to Cart
-    </button>
+    @if (product?.showAddToCartButton) {
+        <button class="add-to-cart-btn">
+            Add to Cart
+        </button>
+    }
   </div>
 </div> 

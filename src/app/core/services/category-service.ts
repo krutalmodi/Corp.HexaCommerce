@@ -15,12 +15,12 @@ export class CategoryService {
     ];
   };
 
-  getCategoryById(id: number): Category | undefined {
+  getCategoryById(id: number) : Category | undefined {
     const categories = this.getCategories();
     return categories.find(category => category.id === id);
   }
 
-  getCategoryByName(name: string): Category | undefined {
+  getCategoryByName(name: string) {
     const categories = this.getCategories();
     return categories.find(category => category.name.toLowerCase() === name.toLowerCase());
   }

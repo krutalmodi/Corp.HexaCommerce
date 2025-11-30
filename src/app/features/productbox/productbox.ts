@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../../core/models/product';
 import { CommonModule } from '@angular/common';
 
@@ -9,20 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './productbox.less',
 })
 export class Productbox {
-  Product: Product | undefined;
-  
-  ngOnInit() {
-    // Placeholder product data
-    this.Product = {
-      id: 1,
-      name: 'Sample Product',
-      description: 'This is a sample product description.',
-      price: 29.99,
-      imageUrl: 'assets/sample-product.jpg',
-      categoryId: 1,
-      productRating: 4.5,
-      showAddToCartButton: true,
-      isEnabled: true
-    };
-  } 
+  @Input() product: Product | null = null;
 }
