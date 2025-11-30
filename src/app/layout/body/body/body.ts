@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HomeSlider } from "../../../features/home/components/home-slider/home-slider";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-body',
-  imports: [HomeSlider],
+  imports: [RouterOutlet],
   templateUrl: './body.html',
   styleUrl: './body.less',
 })
