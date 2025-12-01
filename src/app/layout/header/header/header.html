@@ -1,17 +1,19 @@
   <header class="site-header">
-    <div class="header-inner">
-      <h1 class="logo">{{ title() }}</h1>
+    <div class="header-inner container">
+      <div class="brand">
+        <h1 class="logo">{{ title() }}</h1>
+      </div>
+
       <nav class="main-nav" aria-label="Main navigation">
-        <a routerLink="" class="nav-link">HOME </a>
-        <a routerLink="about" class="nav-link">ABOUT</a>
-        @for (category of categories; track $index) {
-          <a [routerLink]="['/category', category.id]" class="nav-link">{{ category.name | uppercase }}</a>
-        }
-        <a routerLink="contact" class="nav-link">CONTACT</a>
+        <a routerLink="/" class="nav-link">Home</a>
+        <a routerLink="/about" class="nav-link">About</a>
+        <a *ngFor="let category of categories" [routerLink]="['/category', category.id]" class="nav-link">{{ category.name | uppercase }}</a>
+        <a routerLink="/contact" class="nav-link">Contact</a>
       </nav>
+
       <div class="header-actions">
         <input class="search" type="search" placeholder="Search products" aria-label="Search products" />
         <button class="cart" aria-label="Cart">Cart (0)</button>
       </div>
-    </div>  
+    </div>
   </header>

@@ -1,0 +1,32 @@
+/* Global app styles */
+html,body,#root {
+	height: 100%;
+}
+body{
+	font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	margin: 0;
+	color: #222;
+	background: #fff;
+}
+
+.site-main{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.site-content{ flex:1 0 auto }
+
+/* utility container */
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* small helpers */
+.text-center{ text-align:center }
+
+@media (max-width:700px){
+	.container{ padding: 0 12px }
+}

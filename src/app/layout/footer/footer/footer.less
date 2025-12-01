@@ -1,0 +1,28 @@
+.site-footer{
+	background: #fafafa;
+	border-top: 1px solid rgba(0,0,0,0.04);
+	padding: 1rem 0;
+}
+
+.footer-inner{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0 1rem;
+}
+
+.footer-nav a{
+	margin-left: 0.8rem;
+	text-decoration: none;
+	color: #666;
+}
+
+.footer-inner small{
+	color: #666;
+}
+
+@media (max-width: 700px){
+	.footer-inner{ flex-direction: column; text-align: center; }
+	.footer-nav{ margin-top: 0.5rem; }
+}
